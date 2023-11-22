@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'home',
     'activities',
     'categories',
+    'user_profile',
 ]
 
 MIDDLEWARE = [

@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from categories.models import Categories
 
@@ -11,6 +12,7 @@ class Exercise(models.Model):
     description = models.TextField()
     timeframe = models.IntegerField()
     difficulty = models.IntegerField(default=0)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class ExerciseSteps(models.Model):
