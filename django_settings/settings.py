@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'activities',
+    'categories',
+    'user_profile',
 ]
 
 MIDDLEWARE = [
@@ -64,7 +67,9 @@ ROOT_URLCONF = 'django_settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [
+             os.path.join(BASE_DIR, 'templates'),
+        ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -84,13 +89,6 @@ WSGI_APPLICATION = 'django_settings.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 # Parse database connection url strings
 # like psql://user:pass@127.0.0.1:8458/db
 DATABASES = {
@@ -100,24 +98,7 @@ DATABASES = {
     # The db() method is an alias for db_url().
     'default': env.db(),
 
-    # read os.environ['SQLITE_URL']
-    # 'extra': env.db_url(
-    #     'SQLITE_URL',
-    #     default='sqlite:////tmp/my-tmp-sqlite.db'
-    # )
 }
-
-# CACHES = {
-#     # Read os.environ['CACHE_URL'] and raises
-#     # ImproperlyConfigured exception if not found.
-#     #
-#     # The cache() method is an alias for cache_url().
-#     'default': env.cache(),
-#
-#     # read os.environ['REDIS_URL']
-#     'redis': env.cache_url('REDIS_URL')
-# }
-
 
 
 # Password validation
@@ -155,6 +136,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -163,4 +147,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

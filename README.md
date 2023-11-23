@@ -35,6 +35,7 @@ The idea was to make a simple and essential game with a retro appeal. I wanted t
   
 ### User stories
 
+
 #### Italian learner:
 - I want to play a word game to practice my Italian.
 - I want to test my Italian knowledge and see how many words I know. 
@@ -42,6 +43,7 @@ The idea was to make a simple and essential game with a retro appeal. I wanted t
    - I am more likely to memorize words in another language by playing an interactive game.
 - For the guessing choice to be limited, I would like to have the option to choose from different categories.
 - I want to play a straight-forward word game.
+
 
 #### Italian speaker player:
 - I want to spend a few minutes distracting myself from routine tasks.

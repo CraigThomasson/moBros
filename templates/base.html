@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mo Bros - Men's Well-Being{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block style %}{% endblock %}
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="{% url 'activities' %}">Activities</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <div class="content">
+        {% block content %}
+        <!-- Main content goes here -->
+        {% endblock content %}
+    </div>
+
+    <footer>
+        <p>© 2023 Mo Bros - Promoting Men's Health & Well-Being</p>
+    </footer>
+</body>
+</html>
