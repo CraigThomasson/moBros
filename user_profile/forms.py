@@ -3,10 +3,11 @@ from .models import Profile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['bio', 'fitness_level', 'mindfulness_level', 'exercises']
+        fields = ['bio', 'fitness_level', 'mindfulness_level', 'activities']
 
 
 class UserRegisterForm(UserCreationForm):
@@ -16,7 +17,8 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1',
+                  'password2']
 
     def save(self, commit=True):
         user = super().save(commit=False)

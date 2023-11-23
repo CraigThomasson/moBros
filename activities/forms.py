@@ -1,8 +1,8 @@
 from django import forms
-from .models import Exercise
+from .models import Activity
 
 
-class ExerciseForm(forms.Form):
+class EditActivityForm(forms.Form):
     class Meta:
-        model = Exercise
+        model = Activity
         exclude = ('user',)

@@ -4,7 +4,7 @@ from categories.models import Categories
 
 
 # Create your models here.
-class Exercise(models.Model):
+class Activity(models.Model):
     categories = models.ForeignKey(Categories, on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=255)
     reps = models.IntegerField(default=0)
@@ -18,12 +18,12 @@ class Exercise(models.Model):
         return self.name
 
 
-class ExerciseSteps(models.Model):
+class ActivitiesSteps(models.Model):
     """
     Create multiple steps for single exercise
     """
     step = models.CharField
-    exercise = models.ForeignKey(Exercise, on_delete=models.DO_NOTHING)
+    activity = models.ForeignKey(Activity, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.step
