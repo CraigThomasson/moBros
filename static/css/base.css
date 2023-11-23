@@ -13,30 +13,42 @@
     --black: #333;
 }
 
+/* === CSS Reset === */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
 }
-.navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
 }
-.navbar a {
-    color: white;
-    padding: 10px;
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
     text-decoration: none;
+    color: inherit;
 }
-.content {
-    flex: 1;
-}
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 20px;
+
+button {
+    border: none;
+    display: inline-block;
+    cursor: pointer;
 }
