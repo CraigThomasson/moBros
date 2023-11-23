@@ -33,6 +33,7 @@
                 {{ activity.description }}
                 {{ activity.timeframe }} {# /* Time object */#}
                 {{ activity.difficulty }} {# int min-max 0-5 #}
+                <a href="{% url 'edit_activity' activity_id=activity.id %}">EDIT</a>
             </li>
 
 
