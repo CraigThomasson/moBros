@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 
-
-from activities.forms import ExerciseForm
-from activities.models import Exercise
+from activities.forms import EditActivityForm
+from activities.models import Activity
 from user_profile.models import Profile
 
 
@@ -10,7 +9,7 @@ from user_profile.models import Profile
 def activity_list(request):
     categories = ''
 
-    activity_list = Exercise.objects.all()
+    activity_list = Activity.objects.all()
 
     ctx = {
         categories: categories,
@@ -20,22 +19,15 @@ def activity_list(request):
     return render(request, 'activities/activities.html', ctx)
 
 
-def activities_dashboard(request):
-    activities = Exercise.objects.all()
+def edit_activity(request, activity_id):
+    activity = get_object_or_404(Activity, activity_id)
+
+    form = EditActivityForm(instance=activity)
+
 
     ctx = {
-        'activities': activities,
+        'activity': activity,
+        'form': form
     }
+    return render(request, 'activities/edit_activity.html', ctx)
 
-    return render(request, 'activities/activities_dashboard.html', ctx)
-
-
-def add_new_activity(request):
-    form = ExerciseForm()
-    if request.method == 'POST':
-        if form.is_valid():
-            user = form.save(commit=False)
-            user.user = Profile.objects.get(user=request.user)
-            user.save()
-
-    return redirect(reverse('activities_dashboard'))
