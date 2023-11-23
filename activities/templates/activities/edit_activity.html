@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+    <form action="{% url 'edit_activity' activity_id=activity.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <button type="submit">Update</button>
+    </form>
+{% endblock %}

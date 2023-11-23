@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'activities',
+    'categories',
+    'user_profile',
 ]
 
 MIDDLEWARE = [
@@ -96,8 +99,6 @@ DATABASES = {
     'default': env.db(),
 
 }
-
-
 
 
 # Password validation

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Activities - Mo bros{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock %}
+
+
+
+{% block content %}
+    <div>
+        <h2>Activities list</h2>
+    </div>
+
+    <div>
+        Filters
+        {% for category in categories %}
+            <span>{{ category }}</span>
+        {% endfor %}
+    </div>
+
+
+    <div>
+
+        <ul>
+    {% for activity in activity_list %}
+            <li>
+{#                {{ activity.id }}#}
+                {{ activity.name }}
+                {{ activity.reps }}
+                {{ activity.sets }}
+                {{ activity.description }}
+                {{ activity.timeframe }} {# /* Time object */#}
+                {{ activity.difficulty }} {# int min-max 0-5 #}
+                <a href="{% url 'edit_activity' activity_id=activity.id %}">EDIT</a>
+            </li>
+
+
+
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
