@@ -14,6 +14,9 @@ class Exercise(models.Model):
     difficulty = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 
 class ExerciseSteps(models.Model):
     """
@@ -21,3 +24,6 @@ class ExerciseSteps(models.Model):
     """
     step = models.CharField
     exercise = models.ForeignKey(Exercise, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.step
