@@ -1,110 +1,295 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Mo Bros
+by Mighty Mustachios
 
-Welcome USER_NAME,
+## Description
+description of the app
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+View the live project [here]().
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Responsive Mockup:
 
-## Gitpod Reminders
+![Responsive Mockup]() 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Table of Contents
 
-`python3 -m http.server`
+- [User Experience (UX)](#user-experience)
+- [Planning ](#Planning)
+- [Features & Game functionalities](#features-and-game-functionalities)
+- [Tecnologies used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
-A blue button should appear to click: _Make Public_,
+## User Experience
 
-Another blue button should appear to click: _Open Browser_.
+### Project's goal & Design 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The idea was to make a simple and essential game with a retro appeal. I wanted to limit possible aesthetic improvements and let the player experience the pure joy and frustration of guessing words. The game mechanics were designed to be straightforward and immediate. As a result, the game is fast and can be enjoyed during a study or work break.
 
-A blue button should appear to click: _Make Public_,
+### Ideal players
 
-Another blue button should appear to click: _Open Browser_.
+- Learner of Italian as a second language who wants to practice Italian words.
+- Casual Italian speaker player with a basic knowledge of English who wants to play a guessing word game.
+- Casual player with a basic knowledge of Italian and English who wants to distract themselves from daily tasks.
+- Gamer who loves word retro games.
+  
+### User stories
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Italian learner:
+- I want to play a word game to practice my Italian.
+- I want to test my Italian knowledge and see how many words I know. 
+- By guessing Italian words, I want to increase my Italian vocabulary.
+   - I am more likely to memorize words in another language by playing an interactive game.
+- For the guessing choice to be limited, I would like to have the option to choose from different categories.
+- I want to play a straight-forward word game.
 
-To log into the Heroku toolbelt CLI:
+#### Italian speaker player:
+- I want to spend a few minutes distracting myself from routine tasks.
+- I want to play an online game that doesn't take a lot of time.
+- I want to have fun guessing a few words in my own language.
+- I want to play a game with my children.
+- I want my children to play a game to practise/learn Italian words.
+- I want to play a retro/nostalgic game that I used to play in my childhood.
+- I want to play a straight-forward word game.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### Casual player (Italian as a second language):
+- I want to have fun and check the Italian words I know/remember.
+- I want to spend a few minutes distracting myself from routine tasks.
+- I want to play a retro/nostalgic game that I used to play in my childhood.
+- I want to play a straight-forward word game.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### Retro game lover
+- I want to play a simple, quick classic game that doesn't indulge in fancy aesthetics. 
+- I want to feel like I'm in the 80s.
+- I want to play a straight-forward word game that can be played on a terminal.
 
-------
+### What the user might expect:
+- To understand the game's rules easily.
+- A simple game dynamic.
+- A fast and interactive game.
+- Word categories to choose from.
+- As the game progresses and incorrect words are chosen, to see the classic hangman picture.
 
-## Release History
+### As a developer, I expect:
+- To provide an easy and logical game dynamic.
+- To make the game as clear and simple to play as possible.
+- To provide some entertainment.
+- To provide a game challenging enough to keep the player interested.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Planning
+### Flowchart
+I created this flowchart when I was planning the logic for the game. Even though it is rough, it has helped me with the development of the game dynamic.
 
-**September 20 2023:** Update Python version to 3.9.17.
+![Draft flowchart](https://i.ibb.co/9Y6gmWv/my-screenshots-2023-11-18-at-18-19-32.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Game flow
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+During the planning process, I took the following notes:
+1. User opens terminal. Welcome message appears with nursery rhymes to explain the game.
+2. The user is asked if they want to play:
+   - If 'yes', the game starts.
+   - If 'no', the game exits.
+3. If user wants to play, the game displays a random dashed version of the word (example: _ _ _ _ )
+   - Dashes are displayed instead of letters (user knows the word length).
+   - When guessed correctly, the correct letter replaces the dash.
+   - Display for the player:
+      - Word: _ _ _ _ _ _ 
+      - Length of the word
+      - Letters guessed: a, b
+      - Attempts left: num
+4. User asked to choose a letter.
+5. A message appears: 
+   - if the letter is incorrect: "Letter wrong. Please try again."
+      - A part of the hangman picture is shown. 
+   - if the letter is correct: "Well done"
+6. User is asked to input another letter. 
+   - It will be added at the bottom of the info provided.
+   - If the player has attempts left, they will be asked to guess again.
+7. When the player has zero attempts left, the handman picture is complete and the game is over. Display message: "You lost."
+8. If the player guesses all the letters correctly, they win the game. Display message: "You won."  
+9. Both loss and win will prompt a message asking if user wants to continue playing.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Features and game functionalities
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### How to play
+The goal of the game is to identify the word correctly within seven attempts and save the little man from execution. As a way of simplifying the guessing game, I have defined three different categories that can be selected by the player at the beginning.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Existing Features
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+#### Introduction
+When the terminal is open, a classic picture of the Hangman game is displayed.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Hangman picture](https://i.ibb.co/fdnQFxj/hangman-pic.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+Afterwards, a message welcoming the player is accompanied by a nursery rhyme that gives a jolly introduction to the game. As an alternative to the usual rules list, I wanted to come up with something that grabs the user's attention.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![Welcome message and nursery rhyme](https://i.ibb.co/7189q62/Welcome-message-and-rhyme.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+After that, the user is given a line of instructions with the number of attempts they have in order to guess the word. This is followed by an invitation to play, in capital letters, to which the user can reply and start the game dynamic.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![Instruction line and nvitation to play](https://i.ibb.co/wKmZqZt/my-screenshots-2023-11-17-at-20-30-20.png)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+##### Introductory nursery rhyme 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The nursery rhyme was created in collaboration with chatGPT. I think it's my favourite part, since it sets a merry atmosphere. As this type of game is very straightforward, the rhyme was just a funny way for me to convey the most important pieces of information. Reading it, the player can learn what the game is about (guessing a word), the language of the word (Italian), and the game's purpose (saving a little man from the Italian hangman) that gives a little bit of extra funny context.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### User interactions 
 
-------
+The game begins when the player enters 'yes'. Immediately, they are asked to choose a category from "Natural phenomena," "Months & seasons," and "Animals."
 
-## FAQ about the uptime script
+![Select a category: 1: Natural phenomena, 2: Months & seasons, 3: Animals](https://i.ibb.co/mFSbyhS/category.png)
 
-**Why have you added this script?**
+When the player selects a category, the Italian translation appears, followed by a dashed word with dashes corresponding to the letters the player must guess. Next is the input for guessing a letter. 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![Dashboard when category is selected](https://i.ibb.co/XsQyWNZ/my-screenshots-2023-11-18-at-15-09-14.png)
 
-**How will this affect me?**
+Whenever a correct letter is guessed, it replaces the dashes in the word and a "well done!" message is displayed.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+The dashboard will appear like this:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![Dashboard when correct letter is guessed](https://i.ibb.co/BBbYPxF/well-done-correct-letter.png)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+When a wrong letter is guessed, instead, a consequent message informing the player appears. A piece of the Hangman picture and the remaining attempts are displayed accordingly.
 
-**So….?**
+The dashboard will appear like this:
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![Dashboard when wrong letter is guessed](https://i.ibb.co/3zwxD0k/The-letter-is-not-in-the-word.png)
 
-**Can I opt out?**
+The player is then asked to guess again.
+Users are informed of the letters guessed and the number of attempts remained at each step.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+The game continues until the attempts are over or the player guesses the word first.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+##### Phases of the hangman's picture
+Since the user has seven chances to guess the word, seven pieces of the Hangman picture will be constructed, one by one, whenever the user makes a wrong guess.
 
-**Anything more?**
+Image displayed when the attempts left are 6:
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+![Image displayed when the attempts left are 6](https://i.ibb.co/kxyJWMP/attempts-6.png)
 
----
+Image displayed when the attempts left are 5:
 
-Happy coding!
+![Image displayed when the attempts left are 5](https://i.ibb.co/7rZpB1M/my-screenshots-2023-11-18-at-12-57-37.png)
+
+Image displayed when the attempts left are 4:
+
+![Image displayed when the attempts left are 4](https://i.ibb.co/5cYrnM0/my-screenshots-2023-11-18-at-14-13-57.png)
+
+Image displayed when the attempts left are 3:
+
+![Image displayed when the attempts left are 3](https://i.ibb.co/GTN0Dnh/my-screenshots-2023-11-18-at-12-58-16.png)
+
+Image displayed when the attempts left are 2:
+
+![Image displayed when the attempts left are 2](https://i.ibb.co/7pJkqDk/my-screenshots-2023-11-18-at-12-59-33.png)
+
+Image displayed when the attempt left is 1:
+
+![Image displayed when the attempt left is 1](https://i.ibb.co/DkDRpzy/my-screenshots-2023-11-18-at-12-59-59.png)
+
+Image displayed when the attempt left is 0:
+
+![Image displayed when the attempt left is 0](https://i.ibb.co/NYsgM5v/my-screenshots-2023-11-18-at-13-00-27.png)
+
+##### Loss message
+A loss message appears when the player loses the game, and the correct word will be displayed:
+
+![Loss message](https://i.ibb.co/bzhPsm7/loss-message.png)
+
+##### Victory message
+A victory message appears when the player wins the game:
+![Victory message](https://i.ibb.co/VjCcDCz/victory-message.png)
+
+"Congratulazioni" is clearly the Italian for "congratulations". As I did not want English and Italian mixed in the input messages, I only used Italian in a few instances.
+
+##### Restart the game
+A restart input appears whenever the player wins or loses. 
+
+![Input to restart the game](https://i.ibb.co/TwVGJRt/Would-you-like-to-play-again-input.png)
+
+An affirmative answer restarts the game and the player is asked to select a category. A negative answer ends the game.
+
+
+##### Exit the game
+Whenever the player responds negatively to the game-starting input, the game is ended and a goodbye message appears.
+
+![Game exits](https://i.ibb.co/VDPmzkL/would-you-like-to-play-again-NO.png)
+
+### Future features and general aspects left to implement
+- Increase the number of words in the word bank.
+- Provide more categories to choose from. 
+- Add a tracking score to keep track of players' progress.
+- Make the style more reminiscent of retro games.
+
+
+## Technologies used
+
+- [Python](https://www.python.org): Hight-level programming language used for the creation of the game.
+- [PEP8](http://pep8online.com/) was used to check the code for PEP8 requirements.
+- [Code Beautify - Python Beautifier](https://codebeautify.org/python-formatter-beautifier) was used to format the code.
+- [Heroku: Cloud Application Platform](https://dashboard.heroku.com/apps) was used for the deployment.
+- [Git](https://git-scm.com/) was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+- [GitHub](https://github.com/) was used as the repository for the project after being pushed from Git.
+- [VSCode](https://code.visualstudio.com/) was used as the primary local Integrated Development Environment (IDE) for coding and development.
+- [Lucidchart](https://www.lucidchart.com/pages/) was used to create a draft flowchart during the planning process.
+- [ImgBB](https://imgbb.com/) was used to upload images and extract the source code.
+- [Am I Responsive?](http://ami.responsivedesign.is) was used to generate the mockup of the website.
+- [Table Convert](https://tableconvert.com/) was used to generate tables for the TESTING.md file.
+- [ChatGPT](https://chat.openai.com/) was used as helpful tool during the debugging process.
+
+
+## Modules imported 
+The three modules used are part of the Python Standard Library.
+- **Random Module**: this module provides functions to generate random numbers, choices, and sequences. In the game, it was used to extrapolate random words from the word bank.
+- **String Module**: this module contains various string-specific constants and functions, offering utilities for string manipulations, like checking character sets or formatting. In the game, it was used to access all uppercase letters in the alphabet.
+- **Sys Module**: this module provides access to some variables used or maintained by the Python interpreter and facilitates interactions with the system environment. Specifically, in this project it was used to exit the game.
+
+## Testing
+
+Testing information can be found in [TESTING.md file](TESTING.md).
+
+## Deployment
+
+Heroku was used to deploy the site. Here are the steps to deploy:
+
+1. Log in to Heroku.
+2. Click "Create a new app".
+3. Choose the app name and region.
+4. Click "Create app".
+5. Navigate to the "settings" tab.
+6. "Click "Reveal Config Vars".
+7. Add a configuration variable to Heroku's Settings. The key is PORT and the value is 8000
+8. Scroll down to "Buildpacks".
+9. Click "Add Buildpack".
+10. First, add "python" and click save.
+11. Second, add "nodejs" and click save.
+
+The live site can be found here: [The Italian Hangman Game]()
+
+### Cloning:
+1. Click the "Code" button in the GitHub repository.
+2. Choose "HTTPS" and copy the URL.
+3. Open the Terminam (in macOS) or Git Bash (in Windows) and navigate to the repository where you would like to locate the cloned repository.
+4. Type "git clone" followed by the copied URL.
+5. Press enter to create the clone.
+
+### Forking
+You can fork this project and make a copy of the original repository in your own GitHub account. In this case, you can view or make changes without affecting the original. To do so:
+
+- log into GitHub and locate the GitHub Repository;
+- at the top right of the screen, click the Fork button.
+
+It should be noted that all changes pushed to the main branch are automatically reflected on the site.
+
+
+## Credits
+### Content
+This is a classic Hangman game with Italian words. For more info about the history of the game, please refer to [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game)).
+
+### Code
+
+My first step was to watch some hangman game videos on YouTube, like [this](https://youtu.be/cJJTnI22IF8?si=4nZef1AhFSj1baPk) by Kylie Ying or [this one](https://youtu.be/m4nEnsavl6w?si=Wi3xwg5GOtgJFG6m) by Kite, to get an idea of how to set the game up. Then in preparation for my coding process, I created a flowchart to visualize the game logic. When the logic was clear, I started writing function descriptions, as my mentor suggested, so I would know exactly what I wanted from each function. Then, I coded step-by-step, aided by online researching.
+
+### Acknowledgment
+
+I am very grateful to my mentor Brian Macharia for his suggestions, and to my classmate Niclas for his precious support. Also, a special thanks goes to the amazing tool that is ChatGPT: it helped me with the creation of the nursery rhyme (I give credit to myself as well here, as I've embellished and made the rhymes more meaningful), the debugging process and to better understand how Python works.
