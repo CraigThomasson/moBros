@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
+{% load static %}
+{% load activity_filters %}
+
 {% block content %}
+
+
 <h2>Log Completed Activity</h2>
 <form method="post">
     {% csrf_token %}
@@ -11,4 +16,22 @@
     </div>
     {% endfor %}
 </form>
+
+<div class="chart-container">
+    <canvas id="activityChart"></canvas>
+</div>
+
 {% endblock %}
+
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/activity_chart.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    renderActivityChart({{ activity_dates|safe }}, {{ activity_counts|safe }});
+});
+</script>
+{% endblock %}
+
+
