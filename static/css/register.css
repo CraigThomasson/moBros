@@ -63,7 +63,7 @@ button {
 
 .registration_page {
     min-height: 100vh;
-    background-image: url(./media/mens_wellness_v2.jpg);
+    background-image: url(https://cdn.gradko.ovh/mobro/media/men_wellness_v2.jpg);
     filter: blur(13px);
     pointer-events: none;
     background-repeat: no-repeat;
