@@ -34,7 +34,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io',]
+ALLOWED_HOSTS = ['8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io', '127.0.0.1',]
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io',]
 
