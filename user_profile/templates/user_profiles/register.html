@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Register - Mo bros{% endblock %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/register.css' %}">{% endblock %}
 
 {% block content %}
 <!-- Registration page-->
-<section class="registration_area">
+<section class="registration_area_active">
     <form method="post" class="registration">
         <h2>Sign Up</h2>
         {% csrf_token %}
