@@ -35,8 +35,8 @@
 .btn-container {
     display: flex;
     justify-content: space-between;
-    width: 30%;
-    margin-top: 50px;
+    width: 28%;
+    margin-top: 40px;
 }
 
 .text-highlight {
