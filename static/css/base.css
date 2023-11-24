@@ -53,6 +53,35 @@ button {
     cursor: pointer;
 }
 
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out
+}
+
+.btn-purple {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.btn-purple:hover, .btn-purple:focus, .btn-purple:active {
+    background-color: var(--indigo);
+}
+
+.btn-white {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.btn-white:hover , .btn-white:focus, .btn-white:active {
+    background-color: var(--gold);
+    color: var(--white);
+}
+
 .chart-container {
     position: relative;
     margin: auto;
