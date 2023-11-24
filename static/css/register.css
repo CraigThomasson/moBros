@@ -56,9 +56,11 @@ button {
 .chart-container {
     position: relative;
     margin: auto;
-    height: 40vh;   /* Adjust the height as needed */
-    width: 80vw;    /* Adjust the width as needed */
+    height: 40vh; 
+    width: 80vw;   
 }
+
+/* Styling for Registration Page */
 
 .registration_page {
     min-height: 100vh;
@@ -73,7 +75,7 @@ button {
     bottom: 0;
     left: 0;
     min-height: 100vh;
-    background-image: url(./media/mens_wellness_v2.jpg);
+    background-image: url(/static/media/mens_wellness_v2.jpg);
     filter: blur(13px);
     pointer-events: none;
     background-repeat: no-repeat;
@@ -90,33 +92,36 @@ button {
     box-shadow: 0 5px 8px;
     border-radius: 30px;
     background: var(--white);
-    padding: 30px;
+    padding: 50px;
     opacity: 0.95;
     pointer-events: auto;
     z-index: 1;
-    max-width: 800px;
     height: 70vh;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.registration_moustache {
+.logo {
     display: block;
     margin: auto;
     border-radius: 10px;
     background-repeat: no-repeat;
     background-position: center center;
+    max-width: 30%;
+    max-height: 30%;
 }
 
 .registration_page .registration_area h2 {
+    font-size: 25px;
     text-align: center;
-    font-size: 35px;
+    margin: 40px;
 }
 
 .registration_page .registration_area h3 {
+    font-size: 17px;
     text-align: center;
-    font-size: 15px;
+    margin: 25px;
 }
 
 .registration_page .registration_area form {
@@ -127,10 +132,21 @@ button {
     width: 100%;
 }
 
-.registration_page .registration_area .registration .registration_inputs {
-    width: 100%;
+.registration_page .registration_area .registration .btn-container {
+    width: 70%;
+    margin: 10px 0;
     border: 1px solid #ccc;
-    background: #FFF;
-    margin: 0 0 5px;
+    background: var(--purple);
+    color: var(--white);
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    font: 700 1rem/1.2 sans-serif;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
 }
