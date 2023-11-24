@@ -1,7 +1,6 @@
 /**
  * DOM elements for the registration page
  */
-const homeArea = document.querySelector('.home_area');
 const signUpButton = document.querySelector('.sign_up_button');
 const registrationArea = document.querySelector('.registration_area');
 
@@ -12,5 +11,4 @@ const registrationArea = document.querySelector('.registration_area');
 signUpButton.onclick = () => {
     console.log('Sign Up Button clicked');
     registrationArea.classList.add('active');
-    homeArea.classList.add('active');
 };

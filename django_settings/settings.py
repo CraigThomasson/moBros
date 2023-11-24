@@ -35,8 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 
-ALLOWED_HOSTS = ['8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io', 'mo-bros-275496d6be44.herokuapp.com/','*']
-
+ALLOWED_HOSTS = ['*', '8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io', 'mo-bros-275496d6be44.herokuapp.com/', '*']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io',]
 
@@ -103,7 +102,7 @@ DATABASES = {
     'default': env.db(),
 
 }
-
+DATABASES['default'].update(ssl_require=False)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -152,3 +151,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# import django_heroku
+# django_heroku.settings(locals())

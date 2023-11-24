@@ -9,9 +9,13 @@ from django.db.models.functions import TruncDate
 
 def activity_session_in_progress(request):
     active_session = ActivitySession.objects.filter(user=request.user, active=True)
+    # active_session = ActivitySession.objects.all()
+    print(active_session)
 #     user sends get request to add into the In Progress card
 # user can add upto 5-10 activities in one session
-    pass
+    return render(request,
+                  'activity_tracker/activity_session.html',
+                  {'active_session': active_session})
 
 
 def add_activity_to_activity_tracker(request):
@@ -35,11 +39,11 @@ def log_completed_activity(request):
 
     # activity_data = completed_activities.annotate(date=TruncDate('date_completed')).values('date').annotate(count=Count('id')).values('date', 'count')
 
-    activity_dates = [activity['date'].strftime("%Y-%m-%d") for activity in activity_data]
-    activity_counts = [activity['count'] for activity in activity_data]
+    # activity_dates = [activity['date'].strftime("%Y-%m-%d") for activity in activity_data]
+    # activity_counts = [activity['count'] for activity in activity_data]
 
     return render(request, 'activity_tracker/log_completed_activity.html', {
         'activities': activities,
-        'activity_dates': activity_dates,
-        'activity_counts': activity_counts
+        # 'activity_dates': activity_dates,
+        # 'activity_counts': activity_counts
     })
