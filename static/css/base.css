@@ -52,3 +52,10 @@ button {
     display: inline-block;
     cursor: pointer;
 }
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 40vh;   /* Adjust the height as needed */
+    width: 80vw;    /* Adjust the width as needed */
+}
