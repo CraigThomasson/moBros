@@ -60,6 +60,17 @@ button {
     width: 80vw;    /* Adjust the width as needed */
 }
 
+
+.registration_page {
+    min-height: 100vh;
+    background-image: url(./media/mens_wellness_v2.jpg);
+    filter: blur(13px);
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .registration_area {
     position: absolute;
     top: 50%;
@@ -68,9 +79,6 @@ button {
     border-radius: 30px;
     background: #627AD5;
     padding: 5px 15px;
-}
-
-.registration_area.active {
     opacity: 1;
     pointer-events: auto;
 }
