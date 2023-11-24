@@ -32,6 +32,7 @@ def add_activity_to_activity_tracker(request, activity_id):
     return redirect('activities')
 
 
+@login_required
 def finalize_session(request):
     active_session = ActivitySession.objects.filter(user=request.user, active=True).first()
 
