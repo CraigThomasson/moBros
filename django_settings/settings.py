@@ -102,7 +102,7 @@ DATABASES = {
     'default': env.db(),
 
 }
-
+DATABASES['default'].update(ssl_require=False)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

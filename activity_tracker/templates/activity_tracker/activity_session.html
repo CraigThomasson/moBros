@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load activity_filters %}
+
+{% block content %}
+    {% for session in active_session %}
+    	{{ session.date_created }}
+    	{{ session.active }}
+        {% for foo in session.activity.all %}
+            <br>	{{ foo.name }} <br>
+            {{ foo.description }}
+        {% endfor %}
+
+    {% endfor %}
+
+{% endblock %}
