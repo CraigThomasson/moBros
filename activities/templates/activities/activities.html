@@ -14,9 +14,11 @@
     </div>
 
     <div>
-        Filters
+        Filters [Show all]
         {% for category in categories %}
-            <span>{{ category }}</span>
+{#            Use card target to show/hide different categories sections#}
+            <span style="border:1px solid">{{ category }} card_target=category_id_{{ category.id }}</span>
+
         {% endfor %}
     </div>
 
@@ -24,20 +26,24 @@
     <div>
 
         <ul>
-    {% for activity in activity_list %}
-            <li>
-{#                {{ activity.id }}#}
-                {{ activity.name }}
-                {{ activity.reps }}
-                {{ activity.sets }}
-                {{ activity.description }}
-                {{ activity.timeframe }} {# /* Time object */#}
-                {{ activity.difficulty }} {# int min-max 0-5 #}
-                <a href="{% url 'edit_activity' activity_id=activity.id %}">EDIT</a>
-            </li>
+            {% for category in categories %}
+                <div id="category_id_{{ category.id }}">
+                    {% for activity in activity_list %}
+                        {% if activity.categories.name == category.name %}
+                            <li>
+                                {{ activity.categories.name }}
+                                {{ activity.name }}
+                                {{ activity.reps }}
+                                {{ activity.sets }}
+                                {{ activity.description }}
+                                {{ activity.timeframe }} {# /* Time object */#}
+                                {{ activity.difficulty }} {# int min-max 0-5 #}
+                                <a href="{% url 'edit_activity' activity_id=activity.id %}">EDIT</a>
+                            </li>
+                        {% endif %}
 
-
-
+                    {% endfor %}
+                </div>
             {% endfor %}
         </ul>
     </div>
