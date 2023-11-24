@@ -47,4 +47,4 @@ def sign_in(request):
         else:
             messages.error(request, 'Invalid username or password.')
 
-    return render(request, 'user_profile/sign_in.html')
+    return render(request, 'user_profiles/sign_in.html')
