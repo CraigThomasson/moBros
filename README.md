@@ -27,13 +27,7 @@ Responsive Mockup:
 ### Ideal players
 
 
-<<<<<<< HEAD
 
-<<<<<<< Updated upstream
-=======
-=======
-
->>>>>>> Stashed changes
 #### Italian learner:
 - I want to play a word game to practice my Italian.
 - I want to test my Italian knowledge and see how many words I know. 
@@ -51,12 +45,6 @@ Responsive Mockup:
 - I want my children to play a game to practise/learn Italian words.
 - I want to play a retro/nostalgic game that I used to play in my childhood.
 - I want to play a straight-forward word game.
-<<<<<<< Updated upstream
-=======
->>>>>>> 9f34bf836a358db26e438fa3534d8d5a33ed16d1
->>>>>>> Stashed changes
-
-
 
 
 ### What the user might expect:
