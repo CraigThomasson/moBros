@@ -36,7 +36,8 @@
 .btn-container {
     display: flex;
     justify-content: space-between;
-    width: 28%;
+    align-items: center;
+    width: 400px;
     margin-top: 40px;
 }
 
