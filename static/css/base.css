@@ -80,6 +80,7 @@ button {
 .btn-white {
     background-color: var(--white);
     color: var(--black);
+    box-shadow: var(--box-shadow);
 }
 
 .btn-white:hover , .btn-white:focus, .btn-white:active {
