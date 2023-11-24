@@ -1,51 +1,60 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Sign Up</h2>
-<form method="post">
-    {% csrf_token %}
-    <div>
-        <label for="{{ form.username.id_for_label }}">Username:</label>
-        {{ form.username }}
-        {% if form.username.errors %}
-            <div class="error">{{ form.username.errors }}</div>
-        {% endif %}
-    </div>
-    <div>
-        <label for="{{ form.first_name.id_for_label }}">First Name:</label>
-        {{ form.first_name }}
-        {% if form.first_name.errors %}
-            <div class="error">{{ form.first_name.errors }}</div>
-        {% endif %}
-    </div>
-    <div>
-        <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
-        {{ form.last_name }}
-        {% if form.last_name.errors %}
-            <div class="error">{{ form.last_name.errors }}</div>
-        {% endif %}
-    </div>
-    <div>
-        <label for="{{ form.email.id_for_label }}">Email:</label>
-        {{ form.email }}
-        {% if form.email.errors %}
-            <div class="error">{{ form.email.errors }}</div>
-        {% endif %}
-    </div>
-    <div>
-        <label for="{{ form.password1.id_for_label }}">Password:</label>
-        {{ form.password1 }}
-        {% if form.password1.errors %}
-            <div class="error">{{ form.password1.errors }}</div>
-        {% endif %}
-    </div>
-    <div>
-        <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
-        {{ form.password2 }}
-        {% if form.password2.errors %}
-            <div class="error">{{ form.password2.errors }}</div>
-        {% endif %}
-    </div>
-    <button type="submit">Register</button>
-</form>
+<!-- Registration page-->
+<section class="registration_area">
+    <form method="post" class="registration">
+        <h2>Sign Up</h2>
+        {% csrf_token %}
+        <div>
+            <label for="{{ form.username.id_for_label }}">Username:</label>
+            <input type="text" id="{{ form.username.id_for_label }}" name="{{ form.username.id_for_label }}" aria-placeholder="Your username" tabindex="1" required autofocus value="{{ form.username.value}}">
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="error">{{ form.username.errors }}</div>
+            {% endif %}
+        </div>
+        <div>
+            <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+            <input type="text" id="{{ form.first_name.id_for_label }}" name="{{ form.first_name.id_for_label }}" aria-placeholder="Your First Name" tabindex="2" required autofocus value="{{ form.first_name.value}}">
+            {{ form.first_name }}
+            {% if form.first_name.errors %}
+                <div class="error">{{ form.first_name.errors }}</div>
+            {% endif %}
+        </div>
+        <div>
+            <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+            <input type="text" id="{{ form.last_name.id_for_label }}" name="{{ form.last_name.id_for_label }}" aria-placeholder="Your Last Name" tabindex="3" required autofocus value="{{ form.last_name.value}}">
+            {{ form.last_name }}
+            {% if form.last_name.errors %}
+                <div class="error">{{ form.last_name.errors }}</div>
+            {% endif %}
+        </div>
+        <div>
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            <input type="text" id="{{ form.email.id_for_label }}" name="{{ form.email.name }}" aria-placeholder="Your Email" tabindex="4" required autofocus value="{{ form.email.value}}">
+            {{ form.email }}
+            {% if form.email.errors %}
+                <div class="error">{{ form.email.errors }}</div>
+            {% endif %}
+        </div>
+        <div>
+            <label for="{{ form.password1.id_for_label }}">Password:</label>
+            <input type="password" id="{{ form.password1.id_for_label }}" name="{{ form.password2.id_for_label }}" aria-placeholder="Your Password" tabindex="5" required autofocus value="{{ form.password1.value}}">
+            {{ form.password1 }}
+            {% if form.password1.errors %}
+                <div class="error">{{ form.password1.errors }}</div>
+            {% endif %}
+        </div>
+        <div>
+            <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+            <input type="password" id="{{ form.password2.id_for_label }}" name="{{ form.password2.id_for_label }}" aria-placeholder="Your Last Name" tabindex="6" required autofocus value="{{ form.password2.value}}">
+            {{ form.password2 }}
+            {% if form.password2.errors %}
+                <div class="error">{{ form.password2.errors }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" name="submit" class="submit_button" data-submit="...Registering">Register</button>
+    </form>
+</section>
 {% endblock %}
