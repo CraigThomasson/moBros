@@ -9,9 +9,10 @@ from django.db.models.functions import TruncDate
 
 def activity_session_in_progress(request):
     active_session = ActivitySession.objects.filter(user=request.user, active=True)
+    print(active_session)
 #     user sends get request to add into the In Progress card
 # user can add upto 5-10 activities in one session
-    pass
+    return render(request, 'activity_tracker/activity_sesion.html', {'active_session':active_session})
 
 
 def add_activity_to_activity_tracker(request):
