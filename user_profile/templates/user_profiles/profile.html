@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% block title %}Home - Mo bros{% endblock %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/profile.css' %}">{% endblock %}
+
 
 {% block content %}
 <div class="profile-container">
