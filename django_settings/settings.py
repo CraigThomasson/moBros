@@ -13,6 +13,7 @@ import environ
 import os
 from pathlib import Path
 
+
 env = environ.Env(
     DEBUG=(bool, False)
 )
@@ -33,9 +34,9 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io', 'mo-bros-275496d6be44.herokuapp.com/',]
+ALLOWED_HOSTS = ['8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io','127.0.0.1','localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io', 'https://mo-bros-275496d6be44.herokuapp.com/',]
+CSRF_TRUSTED_ORIGINS = ['https://8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io',]
 
 # Application definition
 
@@ -61,7 +62,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'django_settings.urls'
@@ -137,13 +137,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -153,6 +150,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-import django_heroku
-django_heroku.settings(locals())
