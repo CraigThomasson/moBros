@@ -13,10 +13,6 @@ import environ
 import os
 from pathlib import Path
 
-import django_heroku
-django_heroku.settings(locals())
-
-
 env = environ.Env(
     DEBUG=(bool, False)
 )
@@ -157,3 +153,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+import django_heroku
+django_heroku.settings(locals())
