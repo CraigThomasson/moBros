@@ -60,8 +60,18 @@ button {
     width: 80vw;    /* Adjust the width as needed */
 }
 
-
 .registration_page {
+    min-height: 100vh;
+    position: relative;
+}
+
+.registration_page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     min-height: 100vh;
     background-image: url(./media/mens_wellness_v2.jpg);
     filter: blur(13px);
@@ -69,16 +79,18 @@ button {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: -1;
 }
 
-.registration_area {
+.registration_page .registration_area {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 30px;
     background: #627AD5;
-    padding: 5px 15px;
+    padding: var(--indigo);
     opacity: 1;
     pointer-events: auto;
+    z-index: 1;
 }
