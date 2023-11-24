@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ProfileForm, UserRegisterForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 
 
@@ -43,8 +43,13 @@ def sign_in(request):
         
         if user is not None:
             login(request, user)
-            return redirect('profile')  # Redirect to the profile page
+            return redirect('view_profile')  # Redirect to the profile page
         else:
             messages.error(request, 'Invalid username or password.')
 
     return render(request, 'user_profiles/sign_in.html')
+
+
+def log_out(request):
+    logout(request)
+    return redirect('home')
