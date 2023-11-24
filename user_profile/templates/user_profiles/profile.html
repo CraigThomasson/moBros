@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
 {% block content %}
-<h1>{{ user.username }}'s Profile</h1>
-<p>Bio: {{ profile.bio }}</p>
-<p>Fitness Level: {{ profile.fitness_level }}</p>
-<p>Mindfulness Level: {{ profile.mindfulness_level }}</p>
-<a href="{% url 'edit_profile' %}">Edit Profile</a>
+<div class="profile-container">
+
+
+</div>
+<img class="profile-img" src="" alt="">
+<div class="profile-bio-section">
+    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+    <h1 class="profile-name">{{ user.username }}'s profile</h1>
+    <p class="profile-bio">Bio: {{ profile.bio }}</p>
+    <div class="profile-levels-container">
+        <p class="profile-fitness-level">Fitness Level: {{ profile.fitness_level }}</p>
+        <p class="profile-mindfulness-level">Mindfulness Level: {{ profile.mindfulness_level }}</p>
+    </div>
+</div>
+
+<div class="profile-activities-list"></div>
 {% endblock %}
