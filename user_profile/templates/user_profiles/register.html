@@ -52,7 +52,7 @@
         </div>
         <div>
             <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
-            <input type="password" id="{{ form.password2.id_for_label }}" name="{{ form.password2.id_for_label }}" aria-placeholder="Your Last Name" tabindex="6" required autofocus value="{{ form.password2.value}}">
+            <input type="password" id="{{ form.password2.id_for_label }}" name="{{ form.password2.id_for_label }}" aria-placeholder="Confirm Password" tabindex="6" required autofocus value="{{ form.password2.value}}">
             {{ form.password2 }}
             {% if form.password2.errors %}
                 <div class="error">{{ form.password2.errors }}</div>
