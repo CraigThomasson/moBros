@@ -8,11 +8,11 @@ from user_profile.models import Profile
 
 # Create your views here.
 def activity_list(request):
-    categories = Categories.objects.all()
-    activity_list = Activity.objects.all()
+    categories = list(Categories.objects.all())
+    activity_list = list(Activity.objects.all())
 
     ctx = {
-        'categories': list(categories),
+        'categories': categories,
         'activity_list': activity_list,
     }
 
