@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required
 from datetime import date
 from django.db.models import Count, DateField
 from django.db.models.functions import TruncDate
+from django.core.serializers import serialize
+import json
 
 
 def activity_session_in_progress(request):
@@ -31,34 +33,52 @@ def add_activity_to_activity_tracker(request, activity_id):
 
 
 def finalize_session(request):
-    active_session = ActivitySession.objects.filter(user=request.user, active=True)
-    f = ActivitySession.objects.get(id=active_session[0].id)
-    f.active = False
-    f.date_completed = datetime.date.today()
-    f.save()
+    active_session = ActivitySession.objects.filter(user=request.user, active=True).first()
+
+    if active_session:
+        # Set the session as inactive and save the completion date
+        active_session.active = False
+        active_session.date_completed = datetime.date.today()
+        active_session.save()
+
+        # For each activity in the session, create a CompletedActivity
+        for activity in active_session.activity.all():
+            CompletedActivity.objects.create(
+                user=request.user,
+                activity=activity,
+                session=active_session  # Use the specific session instance
+            )
+
     return redirect('view_profile')
 
 
+@login_required
 def log_completed_activity(request):
-    user_profile = request.user.profile
-    activities = user_profile.activities.all()
+    # Fetch completed activities
+    completed_activities = CompletedActivity.objects.filter(user=request.user)
 
-    if request.method == 'POST':
-        activity_id = request.POST.get('activity_id')
-        activity = Activity.objects.get(id=activity_id)
-        CompletedActivity.objects.create(user=request.user, activity=activity, date_completed=date.today())
-        return redirect('log_completed_activity')
+    # Count total completed activities
+    total_completed_activities = completed_activities.count()
 
-    #SESSIONs
-    # completed_activities = CompletedActivity.objects.filter(user=request.user)
+    # Count total completed sessions
+    total_sessions = ActivitySession.objects.filter(
+        user=request.user, 
+        date_completed__isnull=False
+    ).count()
 
-    # activity_data = completed_activities.annotate(date=TruncDate('date_completed')).values('date').annotate(count=Count('id')).values('date', 'count')
+    # Aggregate activities by difficulty through sessions
+    activities_by_difficulty = Activity.objects.filter(
+        activitysession__completedactivity__user=request.user,
+        activitysession__date_completed__isnull=False
+    ).values('difficulty').annotate(total=Count('id'))
 
-    # activity_dates = [activity['date'].strftime("%Y-%m-%d") for activity in activity_data]
-    # activity_counts = [activity['count'] for activity in activity_data]
+    # Manually convert the QuerySet of dictionaries to JSON
+    activities_by_difficulty_json = json.dumps(list(activities_by_difficulty))
 
-    return render(request, 'activity_tracker/log_completed_activity.html', {
-        'activities': activities,
-        # 'activity_dates': activity_dates,
-        # 'activity_counts': activity_counts
-    })
+    context = {
+        'total_completed_activities': total_completed_activities,
+        'total_sessions': total_sessions,
+        'activities_by_difficulty': activities_by_difficulty_json,
+    }
+
+    return render(request, 'activity_tracker/log_completed_activity.html', context)
