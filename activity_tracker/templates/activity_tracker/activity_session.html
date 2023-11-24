@@ -4,14 +4,18 @@
 {% load activity_filters %}
 
 {% block content %}
-    {% for session in active_session %}
-    	{{ session.date_created }}
-    	{{ session.active }}
-        {% for foo in session.activity.all %}
-            <br>	{{ foo.name }} <br>
-            {{ foo.description }}
+    {{ active_session.id }}
+    <ul>
+        {% for session in active_session %}
+            <li>{{ session.id }}
+                {{ session.date_created }}
+                {{ session.active }}
+                <ul>{% for foo in session.activity.all %}
+                    <li><br> {{ foo.name }} <br>
+                        {{ foo.description }}</li>
+                {% endfor %}
+                </ul>
+            </li><br>
         {% endfor %}
-
-    {% endfor %}
-
+    </ul>
 {% endblock %}
