@@ -59,12 +59,11 @@ button {
 }
 
 .btn {
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     border-radius: 10px;
-    font-weight: 400;
     font-size: 1rem;
+    font-weight: 700;
     letter-spacing: 1px;
-    text-transform: uppercase;
     transition: all 0.3s ease-in-out
 }
 
@@ -79,7 +78,7 @@ button {
 
 .btn-white {
     background-color: var(--white);
-    color: var(--black);
+    color: var(--purple);
     box-shadow: var(--box-shadow);
 }
 
