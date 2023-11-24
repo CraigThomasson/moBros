@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import ProfileForm, UserRegisterForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
+from django.contrib import messages
 
 
 @login_required
@@ -32,3 +33,18 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'user_profiles/register.html', {'form': form})
+
+
+def sign_in(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            return redirect('profile')  # Redirect to the profile page
+        else:
+            messages.error(request, 'Invalid username or password.')
+
+    return render(request, 'user_profile/sign_in.html')
