@@ -99,3 +99,51 @@
         gap: 20px;
     }
 }
+
+
+/*--------about page*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    color: antiquewhite;
+    padding-inline: 20px;
+
+    }
+
+.grid-container img {
+    display: block;
+    margin-inline: auto;
+    width: 8em;
+    border-radius: 50%;
+}
+.person-section {
+    background-color: #8182c6;
+    padding: 1em;
+    border-radius: 50px;
+}
+
+.text-box {
+    height: 50px;
+    text-align: center;
+
+}
+.text-box p {
+    height: 100%;
+    display: flex;
+    color: #c3ff9d;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-container img {
+        width: 6em;
+        border-radius: 50%;
+    }
+}
