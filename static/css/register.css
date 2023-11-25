@@ -56,9 +56,11 @@ button {
 .chart-container {
     position: relative;
     margin: auto;
-    height: 40vh;   /* Adjust the height as needed */
-    width: 80vw;    /* Adjust the width as needed */
+    height: 40vh; 
+    width: 80vw;   
 }
+
+/* Styling for Registration Page */
 
 .registration_page {
     min-height: 100vh;
@@ -72,8 +74,8 @@ button {
     right: 0;
     bottom: 0;
     left: 0;
-    min-height: 100vh;
-    background-image: url(https://cdn.gradko.ovh/mobro/media/mens_wellness_v2.jpg);
+    min-height: 120vh;
+    background-image: url(/static/media/mens_wellness_v2.jpg);
     filter: blur(13px);
     pointer-events: none;
     background-repeat: no-repeat;
@@ -90,47 +92,184 @@ button {
     box-shadow: 0 5px 8px;
     border-radius: 30px;
     background: var(--white);
-    padding: 30px;
+    padding: 15px;
     opacity: 0.95;
     pointer-events: auto;
     z-index: 1;
-    max-width: 800px;
-    height: 70vh;
+    height: 110vh;
+    width: 86vh;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.registration_moustache {
+.logo {
     display: block;
     margin: auto;
     border-radius: 10px;
     background-repeat: no-repeat;
     background-position: center center;
+    max-width: 30%;
+    max-height: 30%;
 }
 
 .registration_page .registration_area h2 {
+    font-size: 25px;
     text-align: center;
-    font-size: 35px;
+    margin: 15px;
 }
 
 .registration_page .registration_area h3 {
+    font-size: 17px;
     text-align: center;
-    font-size: 15px;
+    margin: 8px;
 }
 
-.registration_page .registration_area form {
-    border: medium none;
-    margin: -5px 0 10px;
-    min-width: 100%;
-    padding: 0;
-    width: 100%;
-}
-
-.registration_page .registration_area .registration .registration_inputs {
-    width: 100%;
+.registration_page .registration_area form input {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    box-sizing: border-box; 
     border: 1px solid #ccc;
-    background: #FFF;
-    margin: 0 0 5px;
-    padding: 10px;
+    border-radius: 5px; 
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    margin: 40px;
+    justify-content: center;
+    text-align: center;
+
+}
+
+button {
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn {
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out
+}
+
+.btn-purple {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.btn-purple:hover, .btn-purple:focus, .btn-purple:active {
+    background-color: var(--indigo);
+}
+
+.btn-white {
+    background-color: var(--white);
+    color: var(--purple);
+    box-shadow: var(--box-shadow);
+}
+
+.btn-white:hover , .btn-white:focus, .btn-white:active {
+    background-color: var(--gold);
+    color: var(--white);
+    margin: 40px;
+    justify-content: center;
+    text-align: center;
+
+}
+
+button {
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn {
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out
+}
+
+.btn-purple {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.btn-purple:hover, .btn-purple:focus, .btn-purple:active {
+    background-color: var(--indigo);
+}
+
+.btn-white {
+    background-color: var(--white);
+    color: var(--purple);
+    box-shadow: var(--box-shadow);
+}
+
+.btn-white:hover , .btn-white:focus, .btn-white:active {
+    background-color: var(--gold);
+    color: var(--white);
+}
+
+#already {
+    text-align: center;
+}
+
+/* Tablet Size */
+@media (max-width: 700px) {
+    .header-top {
+        font-size: 3rem;
+    }
+
+    .header-bottom {
+        font-size: 2rem;
+    }
+
+    .subheader {
+        font-size: 1rem;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        margin-top: 20px;
+        width: 50%;
+        gap: 20px;
+    }
+}
+
+/* Phone Size */
+@media (max-width: 500px) {
+
+    .registration_page {
+        max-height: 70%;
+        width: 100%;
+    }
+
+    .registration_page .registration_area {
+        max-height: 70%;
+        width: 100%;
+    }
+
+    .header-top {
+        font-size: 1.75rem;
+    }
+
+    .header-bottom {
+        font-size: 1.45rem;
+    }
+
+    .subheader {
+        font-size: 0.75rem;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
