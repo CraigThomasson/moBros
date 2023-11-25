@@ -8,7 +8,7 @@
 
 {% block content %}
 <div class="container">
-    <img class="logo" src="{% static 'media/logo.png' %}" alt="the main logo">
+    <img class="logo" src="https://cdn.gradko.ovh/mobro/media/logo.png" alt="the main logo">
 
     <div class="header-container">
         <h1 class="header-top">Your <span class="text-highlight">Brotherhood</span></h1>
@@ -19,6 +19,7 @@
     <div class="btn-container">
         <a class="btn btn-purple" href="{% url 'register' %}">Sign Up</a>
         <a class="btn btn-white" href="{% url 'sign_in' %}">Sign In</a>
+    </div>
 </div>
 
 {% endblock %}
