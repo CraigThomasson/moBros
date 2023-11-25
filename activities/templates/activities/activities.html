@@ -8,6 +8,10 @@
 {% endblock %}
 
 
+{% block extra_js %}
+    <script defer src="{% static 'js/activities.js' %}"></script>
+{% endblock %}
+
 {% block content %}
     <div class="activities-page-container">
         <div class="activities-container">
@@ -25,7 +29,7 @@
             </div>
 
 
-            <div>
+            <div class="activity-">
                 <ul class="activity-list-container">
                     {% for category in categories %}
                         <div class="activity-list" id="category_id_{{ category.id }}">
