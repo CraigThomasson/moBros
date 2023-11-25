@@ -19,7 +19,8 @@
             <div class="category-header-container">
                 {% for category in categories %}
                     {#Use card target to show/hide different categories sections#}
-                    <span class="category-header">{{ category }} card_target=category_id_{{ category.id }}</span>
+                    {#card_target=category_id_{{ category.id }}#}
+                    <span class="category-header">{{ category }}</span>
                 {% endfor %}
             </div>
 
@@ -36,13 +37,13 @@
                                             <span class="activity-name">{{ activity.name }}</span>
                                             <span class="activity-desc">{{ activity.description }}</span>
                                         </div>
-                                        <img src="https://cdn.gradko.ovh/mobro/media/plus-icon.png" alt="add activities icon">
+                                        <a href="{% url 'add_activity_to_session' activity_id=activity.id %}"><img src="https://cdn.gradko.ovh/mobro/media/plus-icon.png" alt="add activities icon"></a>
                                         <!-- {{ activity.reps }}
                                         {{ activity.sets }} -->
                                         <!-- {{ activity.timeframe }} {# /* Time object */#}
                                         {{ activity.difficulty }} {# int min-max 0-5 #} -->
-                                        <!-- <a href="{% url 'edit_activity' activity_id=activity.id %}">EDIT</a>
-                                        <a href="{% url 'add_activity_to_session' activity_id=activity.id %}">Add to the session</a> -->
+                                        <!-- <!-- <a href="{% url 'edit_activity' activity_id=activity.id %}">EDIT</a> -->
+                                        -->
                                     </li>
                                 {% endif %}
                             {% endfor %}
