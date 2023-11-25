@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sign In - Mo bros{% endblock %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/sign-in.css' %}">{% endblock %}
+
 
 {% block content %}
 <!-- Sign In page-->
@@ -9,7 +14,7 @@
             <h3>Where Moustaches Meet Mindfulness!</h3>
             <h2>Sign In</h2>
             <section class="signin_inputs">
-                <form method="post">
+                <form method="post" action="{% url 'sign_in' %}">
                     {% csrf_token %}
                     <div>
                         <label for="username">Username:</label>
