@@ -31,6 +31,10 @@
     z-index: 1;
 }
 
+.activity-list-container {
+    width: 80%;
+}
+
 .logo {
     width: 100px;
 }
