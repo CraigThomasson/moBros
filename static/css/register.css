@@ -75,7 +75,7 @@ button {
     bottom: 0;
     left: 0;
     min-height: 120vh;
-    background-image: url(/static/media/mens_wellness_v2.jpg);
+    background-image: url('https://cdn.gradko.ovh/mobro/media/men_wellness_v2.jpg');
     filter: blur(13px);
     pointer-events: none;
     background-repeat: no-repeat;
