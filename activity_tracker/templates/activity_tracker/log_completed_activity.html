@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load activity_filters %}
+
+{% block content %}
+
+
+<h2>Log Completed Activity</h2>
+<form method="post">
+    {% csrf_token %}
+    {% for activity in activities %}
+    <div>
+        {{ activity.name }}
+        <button type="submit" name="activity_id" value="{{ activity.id }}">Completed</button>
+    </div>
+    {% endfor %}
+</form>
+
+<div class="chart-container">
+    <canvas id="activityChart"></canvas>
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'js/activity_chart.js' %}"></script>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const totalCompletedActivities = {{ total_completed_activities }};
+        const totalSessions = {{ total_sessions }};
+        const activitiesByDifficulty = {{ activities_by_difficulty|safe }};
+        console.log(totalCompletedActivities, totalSessions, activitiesByDifficulty);
+        renderActivityChart(totalCompletedActivities, totalSessions, activitiesByDifficulty);
+    });
+</script>
+{% endblock %}
+
+

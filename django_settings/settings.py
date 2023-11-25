@@ -13,7 +13,6 @@ import environ
 import os
 from pathlib import Path
 
-
 env = environ.Env(
     DEBUG=(bool, False)
 )
@@ -34,8 +33,10 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['*']
 
+ALLOWED_HOSTS = ['*', '8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io', 'mo-bros-275496d6be44.herokuapp.com/', '*']
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io', 'https://mo-bros-275496d6be44.herokuapp.com/',]
 
 # Application definition
 
@@ -47,6 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'activities',
+    'categories',
+    'user_profile',
+    'activity_tracker',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'django_settings.urls'
@@ -64,7 +70,9 @@ ROOT_URLCONF = 'django_settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [
+             os.path.join(BASE_DIR, 'templates'),
+        ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -84,13 +92,6 @@ WSGI_APPLICATION = 'django_settings.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 # Parse database connection url strings
 # like psql://user:pass@127.0.0.1:8458/db
 DATABASES = {
@@ -100,25 +101,8 @@ DATABASES = {
     # The db() method is an alias for db_url().
     'default': env.db(),
 
-    # read os.environ['SQLITE_URL']
-    # 'extra': env.db_url(
-    #     'SQLITE_URL',
-    #     default='sqlite:////tmp/my-tmp-sqlite.db'
-    # )
 }
-
-# CACHES = {
-#     # Read os.environ['CACHE_URL'] and raises
-#     # ImproperlyConfigured exception if not found.
-#     #
-#     # The cache() method is an alias for cache_url().
-#     'default': env.cache(),
-#
-#     # read os.environ['REDIS_URL']
-#     'redis': env.cache_url('REDIS_URL')
-# }
-
-
+DATABASES['default'].update(ssl_require=False)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -154,7 +138,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -162,5 +152,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if not DEBUG:
+    STATIC_URL = f'https://cdn.gradko.ovh/mobro/staticfiles/'
+    MEDIA_URL = f'https://cdn.gradko.ovh/mobro/media/'
+
+# import django_heroku
+# django_heroku.settings(locals())

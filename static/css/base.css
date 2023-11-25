@@ -1,0 +1,95 @@
+/* === Google Fonts === */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700;900&display=swap');
+
+/* === CSS Variables === */
+
+:root {
+    --purple: #4E4FB9;
+    --indigo: #627AD5;
+    --gold: #FCB85F;
+    --lilac: #FAEEF8;
+    --white: #fff;
+    --black: #333;
+
+    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* === CSS Reset === */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* === Button Styles ===  */
+
+button {
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn {
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out
+}
+
+.btn-purple {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.btn-purple:hover, .btn-purple:focus, .btn-purple:active {
+    background-color: var(--indigo);
+}
+
+.btn-white {
+    background-color: var(--white);
+    color: var(--purple);
+    box-shadow: var(--box-shadow);
+}
+
+.btn-white:hover , .btn-white:focus, .btn-white:active {
+    background-color: var(--gold);
+    color: var(--white);
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 40vh;   /* Adjust the height as needed */
+    width: 80vw;    /* Adjust the width as needed */
+}

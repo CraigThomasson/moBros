@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Register - Mo bros{% endblock %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/register.css' %}">{% endblock %}
+
+{% block content %}
+<!-- Registration page-->
+<section class="registration_page">
+    <div class="registration_area">
+        <form method="post" class="registration">
+            <h2>MO</h2>
+            <img class="registration_moustache" src="/static/css/media/moustache-clipart-moustache-md.png" alt="Moustache Image" title="Image of Moustache"></=>
+            <h2>BROS</h2>
+            <h3>Unleash the Power of Wellness -</h3>
+            <br>
+            <h3>Where Moustaches Meet Mindfulness!</h3>
+            <h2>Sign Up</h2>
+            {% csrf_token %}
+            <section class="registration_inputs">
+                <div>
+                    <label for="{{ form.username.id_for_label }}">Username:</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <div class="error">{{ form.username.errors }}</div>
+                    {% endif %}
+                </div>
+                <div>
+                    <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+                    {{ form.first_name }}
+                    {% if form.first_name.errors %}
+                        <div class="error">{{ form.first_name.errors }}</div>
+                    {% endif %}
+                </div>
+                <div>
+                    <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+                    {{ form.last_name }}
+                    {% if form.last_name.errors %}
+                        <div class="error">{{ form.last_name.errors }}</div>
+                    {% endif %}
+                </div>
+                <div>
+                    <label for="{{ form.email.id_for_label }}">Email:</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        <div class="error">{{ form.email.errors }}</div>
+                    {% endif %}
+                </div>
+                <div>
+                    <label for="{{ form.password1.id_for_label }}">Password:</label>
+                    {{ form.password1 }}
+                    {% if form.password1.errors %}
+                        <div class="error">{{ form.password1.errors }}</div>
+                    {% endif %}
+                </div>
+                <div>
+                    <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+                    {{ form.password2 }}
+                    {% if form.password2.errors %}
+                        <div class="error">{{ form.password2.errors }}</div>
+                    {% endif %}
+                </div>
+            </section>
+            <button type="submit" name="submit" class="submit_button" data-submit="...Registering">Register</button>
+        </form>
+    </div>
+</section>
+
+<script src="static/js/registration.js"></script>
+{% endblock %}

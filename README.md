@@ -1,110 +1,149 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Mo Bros
+by Mighty Mustachios
 
 Welcome Maksim Popov,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+### Description
+Mo Bros is an empowering app designed to support men on their mental health journey. With a range of features, including meditations, fitness routines for mind and body, and social goals, it offers a holistic approach to mental well-being. Track your progress, access resources, and connect with peers. Whether it's managing stress, building resilience, or seeking inspiration, Mo Bros is your partner for a healthier, happier you. Join us in breaking down barriers and prioritizing men's mental health, one step at a time.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+View the live project [here](https://mo-bros-275496d6be44.herokuapp.com/).
 
-## Gitpod Reminders
+Responsive Mockup:
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![Responsive Mockup]() 
 
-`python3 -m http.server`
+## Table of Contents
 
-A blue button should appear to click: _Make Public_,
+- [User Experience (UX)](#user-experience)
+- [Planning ](#Planning)
+- [Features](#features)
+- [Tecnologies used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
-Another blue button should appear to click: _Open Browser_.
+## User Experience
+### Ideal user
+- Professional who is busy and wants an app with quick and effective suggestions
+- 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### User stories:
+- As a busy professional man, I want the app to offer quick and effective stress-relief techniques that I can easily incorporate into my daily routine.
+- As a man interested in fitness, I want the app to provide workouts and exercises specifically designed to improve my mental health alongside physical fitness.
+- As someone struggling with feelings of isolation, I want the app to suggest ideas for social activities. 
+- As someone looking to build emotional resilience, I want the app to provide exercises recommended by mental health professionals to help me develop coping strategies.
+- As a person in need of daily motivation, I want the app to offer inspirational content or stories that can uplift and encourage me in my mental health journey.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+### What the user might expect:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+### As developers, we expect:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Planning & Design
+### Flowchart
+![flowchart](https://i.ibb.co/Vv7yP68/my-screenshots-2023-11-24-at-08-21-42.png)
 
-------
+ <details>
+<p align="center"><img src="https://i.ibb.co/s5KX30K/flowchart-zoom1.png" alt="flowchart zoom 1"/></br>
+<img src="https://i.ibb.co/54BBBt0/flowchart-zoom2.png" alt="flowchart zoom 2"/></p>
+</details>
 
-## Release History
+### Colour palette
+![colour palette](https://i.ibb.co/XbrQBkH/colour-palette-mo-bros.png)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Wireframes
 
-**September 20 2023:** Update Python version to 3.9.17.
+![Homepage desktop and phone](https://i.ibb.co/cF4zb6K/homepage-mo-bros.png)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![User page desktop and phone]()
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Activity page desktop and phone]()
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Features
+### Existing Features 
+The app includes several key features that address different aspects of men's mental health and well-being.
+These existing features are designed to provide a comprehensive and holistic approach to men's mental health concerns. They offer resources, activities, and a supportive community within the app.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Homepage
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The homepage serves as the central hub, offering quick access to various sections of the app. It provides an overview of available features and serves as a starting point for users.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Activity Selection Page
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+A dedicated section where users can explore and select from a range of mental health activities. It offers diverse options for managing stress, building resilience, finding inspiration, and more.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### User Page
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+Personalized user profiles allow users to track their progress and engage with app features tailored to their needs. Includes features for setting and managing personal mental health goals.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Features and general aspects left to implement
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- Community Feeds Page
+A community-centric space where users can share their activities and achievements. A sense of belonging encourages men to share their mental health.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Community feeds page]()
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+## Technologies used
+- HTML5
+- JavaSctipt
+- CSS3
+- [Python](https://www.python.org)
+- [Heroku: Cloud Application Platform](https://dashboard.heroku.com/apps) was used for the deployment.
+- [PEP8](http://pep8online.com/) was used to check the code for PEP8 requirements.
+- [Code Beautify - Python Beautifier](https://codebeautify.org/python-formatter-beautifier) was used to format the code.
+- [Heroku: Cloud Application Platform](https://dashboard.heroku.com/apps) was [used for the deployment.
+- [Git](https://git-scm.com/) was used for version control to commit to Git and Push to GitHub.
+- [GitHub](https://github.com/) was used as the repository for the project after being pushed from Git.
+- [Lucidchart](https://www.lucidchart.com/pages/) was used to create a draft flowchart during the planning process.
+- [ImgBB](https://imgbb.com/) was used to upload images and extract the source code.
+- [Am I Responsive?](http://ami.responsivedesign.is) was used to generate the mockup of the website.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+## Modules imported 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Testing
+## Deployment
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+Heroku was used to deploy the site. Here are the steps to deploy:
 
-**So….?**
+1. Log in to Heroku.
+2. Click "Create a new app".
+3. Choose the app name and region.
+4. Click "Create app".
+5. Navigate to the "settings" tab.
+6. "Click "Reveal Config Vars".
+7. Add a configuration variable to Heroku's Settings. The key is PORT and the value is 8000
+8. Scroll down to "Buildpacks".
+9. Click "Add Buildpack".
+10. First, add "python" and click save.
+11. Second, add "nodejs" and click save.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Cloning:
+1. Click the "Code" button in the GitHub repository.
+2. Choose "HTTPS" and copy the URL.
+3. Open the Terminam (in macOS) or Git Bash (in Windows) and navigate to the repository where you would like to locate the cloned repository.
+4. Type "git clone" followed by the copied URL.
+5. Press enter to create the clone.
 
-**Can I opt out?**
+### Forking
+You can fork this project and make a copy of the original repository in your own GitHub account. In this case, you can view or make changes without affecting the original. To do so:
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- log into GitHub and locate the GitHub Repository;
+- at the top right of the screen, click the Fork button.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+It should be noted that all changes pushed to the main branch are automatically reflected on the site.
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Credits
+### Content
+TO BE ADDED
 
----
 
-Happy coding!
+
