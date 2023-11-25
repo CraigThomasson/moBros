@@ -1,7 +1,7 @@
 # Mo Bros
 by Mighty Mustachios
 
-![Mo Bros LOGO](https://i.ibb.co/6R8Zp54/image.png)
+Welcome Maksim Popov,
 
 ### Description
 Mo Bros is an empowering app designed to support men on their mental health journey. With a range of features, including meditations, fitness routines for mind and body, and social goals, it offers a holistic approach to mental well-being. Track your progress, access resources, and connect with peers. Whether it's managing stress, building resilience, or seeking inspiration, Mo Bros is your partner for a healthier, happier you. Join us in breaking down barriers and prioritizing men's mental health, one step at a time.

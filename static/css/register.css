@@ -40,6 +40,7 @@ ul, ol {
 img {
     max-width: 100%;
     height: auto;
+    padding-left: 33%;
 }
 
 a {
@@ -101,6 +102,7 @@ button {
     display: flex;
     align-items: center;
     flex-direction: column;
+    max-height: 110%;
 }
 
 .logo {
@@ -256,6 +258,10 @@ button {
         width: 100%;
     }
 
+    img{
+        padding-left: 36%;  
+    }
+
     .header-top {
         font-size: 1.75rem;
     }
@@ -272,4 +278,24 @@ button {
         flex-direction: column;
         gap: 20px;
     }
+}
+
+@media (max-width: 280px) {
+
+
+    /* Registration Page*/
+    .registration_page .registration_area {
+        max-height:127%;
+        width: 100%;
+        display: flex;
+        position: absolute;
+        margin-top: 90px;
+    }
+
+    egistration_page .registration_area h2 {
+        font-size: 20px;
+        text-align: center;
+        margin: 5px;
+    }
+
 }
