@@ -114,6 +114,8 @@
     }
 
 .grid-container img {
+    display: block;
+    margin-inline: auto;
     width: 8em;
     border-radius: 50%;
 }
