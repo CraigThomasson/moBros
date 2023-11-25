@@ -1,10 +1,10 @@
 from django.apps import AppConfig
 
-class YourAppConfig(AppConfig):
-    name = 'your_app_name'
+class UserProfileConfig(AppConfig):
+    name = 'user_profile'
 
     def ready(self):
-        import your_app_name.signals  # Replace 'your_app_name' with the name of your app
+        import user_profile.signals
 
 
 class UserProfileConfig(AppConfig):
