@@ -8,4 +8,4 @@ categoryHeaders.forEach((categoryHeader) => {
 });
 
 
-setTimeout(() => messageContainer.classList.add = 'hide', 5000);
+setTimeout(() => {messageContainer.classList.add = 'hide'}, 5000);
