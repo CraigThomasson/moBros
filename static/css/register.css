@@ -347,3 +347,56 @@ button {
 #already {
     text-align: center;
 }
+
+/* Tablet Size */
+@media (max-width: 700px) {
+    .header-top {
+        font-size: 3rem;
+    }
+
+    .header-bottom {
+        font-size: 2rem;
+    }
+
+    .subheader {
+        font-size: 1rem;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        margin-top: 20px;
+        width: 50%;
+        gap: 20px;
+    }
+}
+
+/* Phone Size */
+@media (max-width: 500px) {
+
+    .registration_page {
+        max-height: 70%;
+        width: 100%;
+    }
+
+    .registration_page .registration_area {
+        max-height: 70%;
+        width: 100%;
+    }
+
+    .header-top {
+        font-size: 1.75rem;
+    }
+
+    .header-bottom {
+        font-size: 1.45rem;
+    }
+
+    .subheader {
+        font-size: 0.75rem;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
