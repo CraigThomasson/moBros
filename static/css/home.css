@@ -122,10 +122,12 @@
     margin-inline: auto;
     width: 8em;
     border-radius: 50%;
+
 }
 .person-section {
     background-color: #8182c6;
     padding: 1em;
+    margin-top: 20px;
     border-radius: 50px;
 }
 

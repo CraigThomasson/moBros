@@ -94,3 +94,10 @@ button {
     width: 80vw;    /* Adjust the width as needed */
 }
 
+
+
+.message-container {
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
