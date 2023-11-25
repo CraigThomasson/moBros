@@ -35,7 +35,6 @@
     width: 100px;
 }
 
-<<<<<<< Updated upstream
 .category-header-container {
     display: flex;
     align-items: center;
@@ -43,14 +42,10 @@
     width: 100%;
 }
 
-=======
->>>>>>> Stashed changes
-
 .activity-list {
     display: flex;
     flex-direction: column;
     gap: 40px;
-<<<<<<< Updated upstream
     width: 70%;
 }
 
@@ -62,6 +57,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 }
