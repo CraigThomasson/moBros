@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
-
 {% load static %}
+
+{% block title %}Home - Mo bros{% endblock %}
+{% block style %}<link rel="stylesheet" href="{% static 'css/profile.css' %}">{% endblock %}
+
 {% load activity_filters %}
 
 
@@ -13,9 +16,9 @@
             <li>{{ session.id }}
                 {{ session.date_created }}
                 {{ session.active }}
-                <ul>{% for foo in session.activity.all %}
+                <div class="activity"><ul>{% for foo in session.activity.all %}
                     <li><br> {{ foo.name }} <br>
-                        {{ foo.description }}</li>
+                        {{ foo.description }}</li></div>
                 {% endfor %}
                 </ul>
             </li><br>
