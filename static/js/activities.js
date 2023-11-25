@@ -7,5 +7,6 @@ categoryHeaders.forEach((categoryHeader) => {
     });
 });
 
+// change style to hide after 5 seconds
 
-setTimeout(() => {messageContainer.classList.add = 'hide'}, 5000);
+setTimeout(() => {messageContainer.style.visibility = 'hidden'}, 5000);
