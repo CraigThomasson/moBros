@@ -292,11 +292,18 @@ button {
         margin-top: 90px;
     }
 
-    egistration_page .registration_area h2 {
+    .registration_page .registration_area h2 {
         font-size: 20px;
         text-align: center;
         margin: 5px;
     }
+
+    .registration_page .registration_area h3 {
+        font-size: 17px;
+        text-align: center;
+        margin: -8px;
+    }
+
 
     .btn {
         padding: 1rem 1rem;
