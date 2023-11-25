@@ -10,7 +10,7 @@ from django.db.models.functions import TruncDate
 from django.core.serializers import serialize
 import json
 
-
+@login_required
 def activity_session_in_progress(request):
     active_session = ActivitySession.objects.filter(user=request.user, active=True)
 #     user sends get request to add into the In Progress card
@@ -19,7 +19,7 @@ def activity_session_in_progress(request):
                   'activity_tracker/activity_session.html',
                   {'active_session': active_session})
 
-
+@login_required
 def add_activity_to_activity_tracker(request, activity_id):
     active_session = ActivitySession.objects.filter(user=request.user, active=True)
 
