@@ -8,9 +8,6 @@ Mo Bros is an empowering app designed to support men on their mental health jour
 
 View the live project [here](https://mo-bros-275496d6be44.herokuapp.com/).
 
-Responsive Mockup:
-
-![Responsive Mockup]() 
 
 ## Table of Contents
 
@@ -24,8 +21,8 @@ Responsive Mockup:
 
 ## User Experience
 ### Ideal user
-- Professional who is busy and wants an app with quick and effective suggestions
-- 
+- Professionals who are busy and want an app with quick and effective suggestions for various simple activities.
+- Anyone who would like to set simple routine for daily exercises to keep their day more or less active.
 
 #### User stories:
 - As a busy professional man, I want the app to offer quick and effective stress-relief techniques that I can easily incorporate into my daily routine.
@@ -36,10 +33,18 @@ Responsive Mockup:
 
 
 ### What the user might expect:
-
+1. Intuitive Navigation: Users can expect a user-friendly interface with straightforward navigation, making it easy to explore different features and activities related to men’s mental health.
+2. Diverse Activity Options: The app offers a wide range of activities catering to various aspects of mental health—stress management, resilience building, inspiration, and more—ensuring there’s something suitable for every user’s needs.
+3. Personalization and Progress Tracking: Users can personalize their mental health journey by setting goals and tracking their progress over time. This feature helps individuals stay motivated and focused on their well-being objectives.
+4. Community Engagement: Expect a vibrant and supportive community space where users can engage in discussions, share experiences, and support each other anonymously. The community feeds foster a sense of connection and solidarity.
+5. Resources and Insights: The app provides curated resources, insights, and professional advice to equip users with the tools and knowledge necessary for their mental health improvement.
 
 ### As developers, we expect:
-
+1. Continuous Improvement: We’re committed to consistently enhancing the app based on user feedback and emerging best practices in mental health and technology. Regular updates will refine existing features and introduce new functionalities.
+2. Optimized Performance: Our focus is on ensuring the app runs smoothly and efficiently across various devices and platforms, providing a seamless user experience.
+2. Community Growth and Support: We aim to nurture and expand the app’s community, fostering a safe and welcoming environment for discussions on men’s mental health.
+3. Data Security and Privacy: We prioritize user data security and privacy, implementing robust measures to safeguard personal information shared within the app.
+4. Collaboration and Innovation: We’re open to collaboration and partnerships that can further enrich the app’s offerings, staying at the forefront of innovation in the field of men’s mental health.
 
 ## Planning & Design
 ### Flowchart
@@ -54,13 +59,14 @@ Responsive Mockup:
 ![colour palette](https://i.ibb.co/XbrQBkH/colour-palette-mo-bros.png)
 
 ### Wireframes
-
+#### Homepage
 ![Homepage desktop and phone](https://i.ibb.co/cF4zb6K/homepage-mo-bros.png)
 
+#### User page
+![User page desktop and phone](https://i.ibb.co/nDwDcg4/signup-page.png)
 
-![User page desktop and phone]()
-
-![Activity page desktop and phone]()
+#### Activities page
+![Activity page desktop and phone](https://i.ibb.co/whLfXvj/category-selection-page.png)
 
 ## Features
 ### Existing Features 
@@ -81,18 +87,17 @@ Personalized user profiles allow users to track their progress and engage with a
 
 ### Features and general aspects left to implement
 
-- Community Feeds Page
+#### Community Feeds Page
 A community-centric space where users can share their activities and achievements. A sense of belonging encourages men to share their mental health.
 
-![Community feeds page]()
-
-
+![Community feeds page](https://i.ibb.co/rQx0kCX/community-feed-page-optional.png)
 
 
 ## Technologies used
 - HTML5
 - JavaSctipt
 - CSS3
+- Django
 - [Python](https://www.python.org)
 - [Heroku: Cloud Application Platform](https://dashboard.heroku.com/apps) was used for the deployment.
 - [PEP8](http://pep8online.com/) was used to check the code for PEP8 requirements.
@@ -104,13 +109,18 @@ A community-centric space where users can share their activities and achievement
 - [ImgBB](https://imgbb.com/) was used to upload images and extract the source code.
 - [Am I Responsive?](http://ami.responsivedesign.is) was used to generate the mockup of the website.
 
-
-## Modules imported 
-
-
 ## Testing
-## Deployment
+Functionality Testing:
+Each feature and functionality within the app is thoroughly tested to ensure it performs as intended.
+Tests cover basic user interactions to verify that key features work without errors.
+Usability Testing:
+User interfaces and navigation are tested to ensure they are intuitive and easy to use.
+Feedback is collected to improve user experience and address any usability issues.
+Device Compatibility:
+The app is tested across various devices and screen sizes to ensure it functions well universally.
+Compatibility checks cover both mobile and desktop platforms.
 
+## Deployment
 Heroku was used to deploy the site. Here are the steps to deploy:
 
 1. Log in to Heroku.
@@ -142,8 +152,12 @@ It should be noted that all changes pushed to the main branch are automatically 
 
 
 ## Credits
-### Content
-TO BE ADDED
+Various sources and tools from the web were used by the team to create the content.
+
+The logo was found here: https://www.pngaaa.com/detail/706134
+The wireframes were created using Figma.
+
+Thank you all for your efforts! Team names: Alexander Grib, Craig Thomasson, Maksim Popov, Nick Moore, Shane Doyle, Stefania Frustagli
 
 
 

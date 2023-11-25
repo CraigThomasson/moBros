@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from activities.forms import EditActivityForm
@@ -19,6 +20,7 @@ def activity_list(request):
     return render(request, 'activities/activities.html', ctx)
 
 
+@login_required
 def edit_activity(request, activity_id):
     activity = get_object_or_404(Activity, pk=activity_id)
     form = EditActivityForm(instance=activity)
