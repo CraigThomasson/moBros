@@ -37,7 +37,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 400px;
+    width: 500px;
     margin-top: 40px;
     padding: 1rem 3rem;
     border-radius: 10px;
@@ -45,7 +45,6 @@
     font-weight: 700;
     letter-spacing: 1px;
     transition: all 0.3s ease-in-out;
-    background-color: var(--purple);
     color: var(--white);
 }
 
@@ -98,5 +97,61 @@
     .btn-container {
         flex-direction: column;
         gap: 20px;
+    }
+}
+
+
+/*--------about page*/
+.info-container {
+    line-height: 1.5rem;
+    padding: 1em 2em;
+    font-size: 1.2rem;
+    background-color: rgba(129, 130, 198, 0.85);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    color: antiquewhite;
+    padding-inline: 20px;
+    padding-top: 20px;
+    }
+
+.grid-container img {
+    display: block;
+    margin-inline: auto;
+    width: 8em;
+    border-radius: 50%;
+}
+.person-section {
+    background-color: #8182c6;
+    padding: 1em;
+    border-radius: 50px;
+}
+
+.text-box {
+    height: 50px;
+    text-align: center;
+
+}
+.text-box p {
+    height: 100%;
+    display: flex;
+    color: #c3ff9d;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+@media only screen and (max-width: 500px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-container img {
+        width: 6em;
+        border-radius: 50%;
     }
 }
