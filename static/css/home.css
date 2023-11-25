@@ -45,7 +45,6 @@
     font-weight: 700;
     letter-spacing: 1px;
     transition: all 0.3s ease-in-out;
-    background-color: var(--purple);
     color: var(--white);
 }
 
