@@ -34,8 +34,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 
-ALLOWED_HOSTS = ['8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io', 'mo-bros-275496d6be44.herokuapp.com/','*']
-
+ALLOWED_HOSTS = ['*', '8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io', 'mo-bros-275496d6be44.herokuapp.com/', '*']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-craigthomasson-mobros-09ff43ttqnb.ws-eu106.gitpod.io', 'https://mo-bros-275496d6be44.herokuapp.com/',]
 
@@ -103,7 +102,7 @@ DATABASES = {
     'default': env.db(),
 
 }
-
+DATABASES['default'].update(ssl_require=False)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -140,12 +139,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = 'static/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -153,8 +152,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-import django_heroku
-django_heroku.settings(locals())
+if not DEBUG:
+    STATIC_URL = f'https://cdn.gradko.ovh/mobro/staticfiles/'
+    MEDIA_URL = f'https://cdn.gradko.ovh/mobro/media/'
+
+# import django_heroku
+# django_heroku.settings(locals())
