@@ -103,6 +103,12 @@
 
 
 /*--------about page*/
+.info-container {
+    line-height: 1.5rem;
+    padding: 1em 2em;
+    font-size: 1.2rem;
+    background-color: rgba(129, 130, 198, 0.85);
+}
 
 .grid-container {
     display: grid;
@@ -110,7 +116,7 @@
     gap: 2em;
     color: antiquewhite;
     padding-inline: 20px;
-
+    padding-top: 20px;
     }
 
 .grid-container img {
@@ -136,9 +142,11 @@
     color: #c3ff9d;
     justify-content: center;
     align-items: center;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
