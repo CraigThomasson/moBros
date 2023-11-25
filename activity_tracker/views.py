@@ -1,5 +1,6 @@
 import datetime
 
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from .models import CompletedActivity, ActivitySession
 from activities.models import Activity
@@ -26,9 +27,11 @@ def add_activity_to_activity_tracker(request, activity_id):
     if not active_session:
         k = ActivitySession.objects.create(user_id=request.user.id)
         k.activity.add(activity_id)
+        messages.success(request, message='Success, activity added!')
         return redirect('activities')
 
     active_session[0].activity.add(activity_id)
+    messages.success(request, message='Success, activity added!')
     return redirect('activities')
 
 
