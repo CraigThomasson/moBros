@@ -16,18 +16,17 @@
                 <h2>Choose Your Activities</h2>
             </div>
 
-            <div>
+            <div class="category-header-container">
                 {% for category in categories %}
                     {#Use card target to show/hide different categories sections#}
-                    <span class="activity-category">{{ category }} card_target=category_id_{{ category.id }}</span>
+                    <span class="category-header">{{ category }} card_target=category_id_{{ category.id }}</span>
                 {% endfor %}
             </div>
 
 
-            <div>
-                <ul>
+                <ul class="activity-list">
                     {% for category in categories %}
-                        <div class="activity-list" id="category_id_{{ category.id }}">
+                        <div class="activity-category" id="category_id_{{ category.id }}">
                             {% for activity in activity_list %}
                                 {% if activity.categories.name == category.name %}
                                     <li class="activity-list-item">
@@ -36,6 +35,7 @@
                                             <span class="activity-name">{{ activity.name }}</span>
                                             <span class="activity-desc">{{ activity.description }}</span>
                                         </div>
+                                        <img src="https://cdn.gradko.ovh/mobro/media/plus-icon.png" alt="add activities icon">
                                         <!-- {{ activity.reps }}
                                         {{ activity.sets }} -->
                                         <!-- {{ activity.timeframe }} {# /* Time object */#}
@@ -45,7 +45,6 @@
                                     </li>
                                 {% endif %}
                             {% endfor %}
-                        </div>
                     {% endfor %}
                 </ul>
             </div>
