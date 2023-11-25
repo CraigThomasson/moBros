@@ -16,12 +16,10 @@ class ActivitySession(models.Model):
 
 
 class CompletedActivity(models.Model):
-
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
-
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE, null=True)
     session = models.ForeignKey(ActivitySession, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.session.activity.name} completed by {self.user.username} on {self.date_completed}"
+        return f"{self.activity.name} completed by {self.user.username}"
 
