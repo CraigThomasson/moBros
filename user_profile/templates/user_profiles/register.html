@@ -8,7 +8,7 @@
 <!-- Registration page-->
 <section class="registration_page">
     <div class="registration_area">
-        <form method="post" class="registration">
+        <form method="post" action="{% url 'register' %}" class="registration">
             <h2>MO</h2>
             <img class="registration_moustache" src="https://cdn.gradko.ovh/mobro/media/moustache-clipart-moustache-md.png" alt="Moustache Image" title="Image of Moustache"></>
             <h2>BROS</h2>
@@ -61,7 +61,14 @@
                     {% endif %}
                 </div>
             </section>
-            <button type="submit" name="submit" class="submit_button" data-submit="...Registering">Register</button>
+            <div class="btn-container">
+                <a class="btn btn-purple" href="{% url 'register' %}">Sign Up</a>
+            </div>
+                <p id="already">Already a user?</p>
+            <div class="btn-container">
+                <button type="submit" class="btn btn-purple">Sign Up</button>
+
+            </div>
         </form>
     </div>
 </section>

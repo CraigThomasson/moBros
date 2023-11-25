@@ -2,24 +2,33 @@
 {% load static %}
 
 {% block title %}Home - Mo bros{% endblock %}
-{% block style %}<link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock %}
 
 
 
 {% block content %}
-<div class="container">
-    <img class="logo" src="https://cdn.gradko.ovh/mobro/media/logo.png" alt="the main logo">
+    <div class="container">
+        <img class="logo" src="https://cdn.gradko.ovh/mobro/media/logo.png" alt="the main logo">
 
-    <div class="header-container">
-        <h1 class="header-top">Your <span class="text-highlight">Brotherhood</span></h1>
-        <h1 class="header header-bottom"> For Better Mental Health</h1>
-        <h2 class="subheader">Start your journey towards a healthier, happier you today.</h2>
-    </div>
+        <div class="header-container">
+            <h1 class="header-top">Your <span class="text-highlight">Brotherhood</span></h1>
+            <h1 class="header header-bottom"> For Better Mental Health</h1>
+            <h2 class="subheader">Start your journey towards a healthier, happier you today.</h2>
+        </div>
 
-    <div class="btn-container">
-        <a class="btn btn-purple" href="{% url 'register' %}">Sign Up</a>
-        <a class="btn btn-white" href="{% url 'sign_in' %}">Sign In</a>
+        {% if request.user.is_authenticated %}
+            <div class="btn-container">
+                <a class="btn btn-purple" href="{% url 'activities' %}">Activities</a>
+            </div>
+
+        {% else %}
+        <div class="btn-container">
+            <a class="btn btn-purple" href="{% url 'register' %}">Sign Up</a>
+            <a class="btn btn-white" href="{% url 'sign_in' %}">Sign In</a>
+        </div>
+        {% endif %}
+
     </div>
-</div>
 
 {% endblock %}
