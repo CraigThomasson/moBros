@@ -1,0 +1,84 @@
+/* === Google Fonts === */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700;900&display=swap');
+
+/* === CSS Variables === */
+
+:root {
+    --purple: #4E4FB9;
+    --indigo: #627AD5;
+    --gold: #FCB85F;
+    --lilac: #FAEEF8;
+    --white: #fff;
+    --black: #333;
+}
+
+/* === CSS Reset === */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 40vh;   /* Adjust the height as needed */
+    width: 80vw;    /* Adjust the width as needed */
+}
+
+
+.registration_page {
+    min-height: 100vh;
+    background-image: url(./media/mens_wellness_v2.jpg);
+    filter: blur(13px);
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.registration_area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    background: #627AD5;
+    padding: 5px 15px;
+    opacity: 1;
+    pointer-events: auto;
+}

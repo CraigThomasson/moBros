@@ -11,6 +11,8 @@
     --lilac: #FAEEF8;
     --white: #fff;
     --black: #333;
+
+    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 /* === CSS Reset === */
@@ -29,6 +31,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    color: var(--black);
     margin: 0;
     padding: 0;
 }
@@ -47,10 +50,41 @@ a {
     color: inherit;
 }
 
+/* === Button Styles ===  */
+
 button {
     border: none;
     display: inline-block;
     cursor: pointer;
+}
+
+.btn {
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out
+}
+
+.btn-purple {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.btn-purple:hover, .btn-purple:focus, .btn-purple:active {
+    background-color: var(--indigo);
+}
+
+.btn-white {
+    background-color: var(--white);
+    color: var(--purple);
+    box-shadow: var(--box-shadow);
+}
+
+.btn-white:hover , .btn-white:focus, .btn-white:active {
+    background-color: var(--gold);
+    color: var(--white);
 }
 
 .chart-container {
