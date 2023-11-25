@@ -63,6 +63,8 @@ button {
 /* Styling for signin Page */
 
 .signin_page {
+    display: flex;
+    align-items: center;
     min-height: 100vh;
     position: relative;
     overflow: hidden; 
@@ -97,7 +99,7 @@ button {
     opacity: 0.95;
     pointer-events: auto;
     z-index: 1;
-    height: 110vh;
+    height: 90vh;
     width: 86vh;
     display: flex;
     align-items: center;
@@ -106,7 +108,6 @@ button {
 
 .logo {
     display: block;
-    margin: auto;
     border-radius: 10px;
     background-repeat: no-repeat;
     background-position: center center;
