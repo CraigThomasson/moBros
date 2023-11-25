@@ -8,46 +8,47 @@
 {% endblock %}
 
 
-
 {% block content %}
-    <div>
-        <h2>Activities list</h2>
-    </div>
+    <div class="activities-page-container">
+        <div class="activities-container">
+            <img class="logo" src="https://cdn.gradko.ovh/mobro/media/logo.png" alt="">
+            <div>
+                <h2>Choose Your Activities</h2>
+            </div>
 
-    <div>
-        Filters [Show all]
-        {% for category in categories %}
-{#            Use card target to show/hide different categories sections#}
-            <span style="border:1px solid">{{ category }} card_target=category_id_{{ category.id }}</span>
-
-        {% endfor %}
-    </div>
+            <div>
+                {% for category in categories %}
+                    {#Use card target to show/hide different categories sections#}
+                    <span class="activity-category">{{ category }} card_target=category_id_{{ category.id }}</span>
+                {% endfor %}
+            </div>
 
 
-    <div>
-
-        <ul>
-            {% for category in categories %}
-                <div id="category_id_{{ category.id }}">
-                    {% for activity in activity_list %}
-                        {% if activity.categories.name == category.name %}
-                            <li>
-                                {{ activity.categories.name }}
-                                {{ activity.name }}
-                                {{ activity.reps }}
-                                {{ activity.sets }}
-                                {{ activity.description }}
-                                {{ activity.timeframe }} {# /* Time object */#}
-                                {{ activity.difficulty }} {# int min-max 0-5 #}
-                                <a href="{% url 'edit_activity' activity_id=activity.id %}">EDIT</a>
-                                <a href="{% url 'add_activity_to_session' activity_id=activity.id %}">Add to the session</a>
-                            </li>
-                        {% endif %}
-
+            <div>
+                <ul>
+                    {% for category in categories %}
+                        <div class="activity-list" id="category_id_{{ category.id }}">
+                            {% for activity in activity_list %}
+                                {% if activity.categories.name == category.name %}
+                                    <li class="activity-list-item">
+                                        <div class="activity-info">
+                                            <!-- {{ activity.categories.name }} -->
+                                            <span class="activity-name">{{ activity.name }}</span>
+                                            <span class="activity-desc">{{ activity.description }}</span>
+                                        </div>
+                                        <!-- {{ activity.reps }}
+                                        {{ activity.sets }} -->
+                                        <!-- {{ activity.timeframe }} {# /* Time object */#}
+                                        {{ activity.difficulty }} {# int min-max 0-5 #} -->
+                                        <!-- <a href="{% url 'edit_activity' activity_id=activity.id %}">EDIT</a>
+                                        <a href="{% url 'add_activity_to_session' activity_id=activity.id %}">Add to the session</a> -->
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     {% endfor %}
-                </div>
-            {% endfor %}
-        </ul>
+                </ul>
+            </div>
+        </div>
     </div>
-
 {% endblock %}
