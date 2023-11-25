@@ -26,10 +26,11 @@ def edit_profile(request):
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
+        print(form.username)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')
+            return redirect('view_profile')  # Redirect to the profile page
     else:
         form = UserRegisterForm()
     return render(request, 'user_profiles/register.html', {'form': form})
