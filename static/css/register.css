@@ -298,4 +298,24 @@ button {
         margin: 5px;
     }
 
+    .btn {
+        padding: 1rem 1rem;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        transition: all 0.3s ease-in-out;
+        justify-content: center;
+        display: flex;
+        position: absolute;
+        margin-bottom: -8px;
+        width: 150px;
+        height: 40px;
+        margin-top: 15px;
+    }
+
+    #already {
+        padding-left: 52px;
+    }
+
 }
