@@ -8,11 +8,13 @@
 <!-- Registration page-->
 <section class="registration_page">
     <div class="registration_area">
-        <form method="post" action="{% url 'register' %}" class="registration">
-            <h2>MO</h2>
-            <img class="registration_moustache" src="https://cdn.gradko.ovh/mobro/media/moustache-clipart-moustache-md.png" alt="Moustache Image" title="Image of Moustache"></>
+
+    <form method="POST" action="{% url 'register_user' %}" class="registration">
+
+        <h2>MO</h2>
+            <img class="registration_moustache" src="https://cdn.gradko.ovh/mobro/media/moustache-clipart-moustache-md.png" alt="Moustache Image" title="Image of Moustache">
             <h2>BROS</h2>
-            <h3>Unleash the Power of Wellness -</h3>
+            <h3>Unleash the Power of Wellness</h3>
             <br>
             <h3>Where Moustaches Meet Mindfulness!</h3>
             <h2>Sign Up</h2>
@@ -62,11 +64,11 @@
                 </div>
             </section>
             <div class="btn-container">
-                <a class="btn btn-purple" href="{% url 'register' %}">Sign Up</a>
+                <button type="submit" class="btn btn-purple">Register</button>
             </div>
                 <p id="already">Already a user?</p>
             <div class="btn-container">
-                <button type="submit" class="btn btn-purple">Sign In</button>
+                <a href="{% url 'sign_in' %}" class="btn btn-purple">Sign In</a>
 
             </div>
         </form>
